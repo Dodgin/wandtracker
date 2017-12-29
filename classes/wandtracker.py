@@ -50,6 +50,11 @@ class WandTracker:
         retDict["mask"] = mask
         return retDict
 
+    # Retrieves a specifically filtered and drawn path of the wand for
+    # processing using the gesture class
+    def getWandSpellDataForProcessing(self):
+        return 0
+
 
     # Loops looking for a wand, returns when wand present for > 1 sec
     def lookForWand(self):

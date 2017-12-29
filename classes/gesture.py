@@ -49,9 +49,10 @@ class Gesture:
                 most_likely_featurematches = featurematches
 
         # Return logic
-        if(most_likely_spell = None):
+        if(most_likely_spell == None):
             return False
-        else return most_likely_spell
+        else:
+            return most_likely_spell
 
 
     # SIFT FLANN function to return a metric of likeness
