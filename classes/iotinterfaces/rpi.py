@@ -15,5 +15,6 @@ class rpi:
                                   =   GND
     """
     # Causes an IR transmission to be sent from the rpi
-    def sendRemoteTransmission(self, action):
-        os.system("irsend SEND_ONCE " + self.tv_type + " " + action)
+    @staticmethod
+    def sendRemoteTransmission(tv_type, action):
+        os.system("irsend SEND_ONCE " + tv_type + " " + action)
