@@ -1,0 +1,21 @@
+[
+  {
+    "guid": "chromecast-mbr",
+    "hostname": "CHROMECAST",
+    "ip": "172.16.0.26",
+    "device_type": "chromecast"
+  },
+  {
+    "guid": "garage-door",
+    "hostname": "CHIP-garage-door",
+    "ip": "172.16.0.184",
+    "device_type": "chip",
+    "custom_io_class": "chipgarage"
+  },
+  {
+    "guid": "philips-hue-hub",
+    "hostname": "PHILIPS-HUE",
+    "ip": "172.16.0.2",
+    "device_type": "philipshuehub",
+  }
+]

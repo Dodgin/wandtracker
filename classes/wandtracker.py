@@ -104,6 +104,12 @@ class WandTracker:
 
         return 0
 
+    def stopTrackingWand(self):
+        return 0
+
+    def getTrackedWandBuffer(self):
+        return 0
+
 
     # Pauses the logic processing to allow for ample time for a spell to complete
     # TODO: most of this logic belongs in a callable method in a Spell class
@@ -113,8 +119,3 @@ class WandTracker:
 
     def hasWandMoved(self):
         return 0
-
-
-class Gesture:
-    def __init__(self):
-        self.test = "yay"

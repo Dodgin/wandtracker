@@ -1,0 +1,18 @@
+[
+  {
+    "guid": "rpi3-mbr",
+    "hostname": "rpi-mbr",
+    "ip": "172.16.0.26",
+    "device_type": "raspberry pi 3 model B",
+    "iot_device_location_specific_guid_list": [
+      {
+        "chromecast-mbr": {},
+        "philips-hue-hub": {
+          "lights": [
+            "mbr-bathroom-shower"
+          ]
+        }
+      }
+    ]
+  }
+]
