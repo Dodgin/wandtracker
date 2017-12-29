@@ -74,6 +74,11 @@ class WandTracker:
 
     # Starts tracking a wand for a gesture
     def startTrackingWand(self):
+
+        # log
+        print("Tracking a spell...")
+
+        # init state, for the method has been called
         self.wand_present = True
 
         # start the timer
@@ -83,6 +88,7 @@ class WandTracker:
         while self.wand_present:
 
             if(time.time() - start_time) >= self.spell_cast_time:
+                print("Spell timeout ("+str(self.spell_cast_time)+"s) reached. Returning to watching for wands.")
                 self.wand_present = False
                 return False
 
