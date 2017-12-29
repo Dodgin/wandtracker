@@ -16,11 +16,12 @@ class WandTracker:
         self.lower = (0, 0, 135)    # lower bounds of wand color detection
         self.tracked_wand_history = None    # history of tracked wand movement
         self.spell_resolution_time = 2  # time until spell cast when wand found
+        self.spell_cast_time = 7 # time allotted for user to cast a spell
 
 
     # Retrieves basic wand data from the camera
     def getWandDataFromCamera(self):
-        
+
         # grab the current frame
         (grabbed, frame) = self.cap.read()
 
@@ -52,7 +53,7 @@ class WandTracker:
     def lookForWand(self):
 
         # start the timer
-        start_time = time.time();
+        start_time = time.time()
 
         # loop forever
         while True:
@@ -75,7 +76,23 @@ class WandTracker:
     def startTrackingWand(self):
         self.wand_present = True
 
+        # start the timer
+        start_time = time.time()
+
+        # Loop until wand disappears or self.spell_cast_time seconds have elapsed
+        while self.wand_present:
+
+            if(time.time() - start_time) >= self.spell_cast_time:
+                self.wand_present = False
+                return False
+
+
         return 0
+
+
+    def spellCooldown(self):
+        return 0
+
 
     def hasWandMoved(self):
         return 0

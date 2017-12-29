@@ -9,6 +9,8 @@ while True:
 
     if(wt.lookForWand()):
         print("Wand found!")
+        wt.startTrackingWand();
+    else:
         time.sleep(1)
 
     # exit clause
