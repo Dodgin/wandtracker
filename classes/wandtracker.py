@@ -41,6 +41,7 @@ class WandTracker:
         # (x, y) center of the ball
         cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
 
+        # TODO: this should prob be a class, not a dict, lets be real
         retDict = {}
         retDict["contours"] = cnts
         retDict["frame"] = frame
@@ -64,6 +65,8 @@ class WandTracker:
             # only proceed if at least one contour was found, and it's been
             # present for at least 1 second
             if len(cnts) > 0:
+
+                # 1s ?
                 if (time.time() - start_time) >= self.spell_resolution_time:
                     return True
 
@@ -87,15 +90,23 @@ class WandTracker:
         # Loop until wand disappears or self.spell_cast_time seconds have elapsed
         while self.wand_present:
 
+            # is time up?
             if(time.time() - start_time) >= self.spell_cast_time:
+
+                # log
                 print("Spell timeout ("+str(self.spell_cast_time)+"s) reached. Returning to watching for wands.")
+
+                # flag state
                 self.wand_present = False
+
                 return False
 
 
         return 0
 
 
+    # Pauses the logic processing to allow for ample time for a spell to complete
+    # TODO: most of this logic belongs in a callable method in a Spell class
     def spellCooldown(self):
         return 0
 
