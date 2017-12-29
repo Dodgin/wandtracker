@@ -8,7 +8,7 @@ import time
 class WandTracker:
 
     # Constructor
-    def __init__(self, camera_stream_uri):
+    def __init__(self, camera_stream_uri, g):
         self.camera_stream_uri = camera_stream_uri # camera unit uri
         self.cap = cv2.VideoCapture(self.camera_stream_uri) # init opencv cam
         self.wand_present = False   # flag for if wand present
@@ -17,6 +17,7 @@ class WandTracker:
         self.tracked_wand_history = None    # history of tracked wand movement
         self.spell_resolution_time = 2  # time until spell cast when wand found
         self.spell_cast_time = 7 # time allotted for user to cast a spell
+        self.gesture = g
 
 
     # Retrieves basic wand data from the camera
