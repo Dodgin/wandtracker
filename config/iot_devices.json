@@ -2,8 +2,9 @@
   {
     "guid": "chromecast-mbr",
     "hostname": "CHROMECAST",
-    "ip": "172.16.0.26",
-    "device_type": "chromecast"
+    "ip": "172.16.0.7",
+    "device_type": "chromecast",
+    "device_specific_identifier": ""
   },
   {
     "guid": "garage-door",
@@ -16,6 +17,6 @@
     "guid": "philips-hue-hub",
     "hostname": "PHILIPS-HUE",
     "ip": "172.16.0.2",
-    "device_type": "philipshuehub",
+    "device_type": "philipshuehub"
   }
 ]
